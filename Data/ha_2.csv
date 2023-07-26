@@ -1,0 +1,70 @@
+Name,age,sex,cp,trtbps,chol,restecg,thalach,diagnosis
+Oley Stoltenberg-Konopelski,57,0,1,120,354,1,163,Disease
+Merilyn Kuhn,57,1,1,140,192,1,148,Disease
+Almedia Morar,44,1,2,120,263,1,173,Disease
+Nicole Jones,57,1,3,150,168,1,174,Disease
+Seaborn Wehner,43,1,1,150,247,1,171,Disease
+Dani Dare MD,65,0,3,160,360,0,151,Disease
+Sarrah Heller,48,1,2,130,245,0,180,Disease
+Jep Nicolas,53,0,1,130,264,0,143,Disease
+Phylicia Abernathy,51,0,3,130,256,0,149,Disease
+Matilda Halvorson,58,1,3,140,211,0,165,Disease
+Jewel Kuhn,51,1,1,140,261,0,186,Disease
+Brande Bailey,59,1,2,140,221,1,164,Disease
+Mr. Collin Cummings IV,52,1,2,128,205,1,184,Disease
+Mr. Ted Green,52,1,4,152,298,1,178,Disease
+May McDermott,58,0,1,100,248,0,122,Disease
+Caryl Conn,45,0,2,112,160,1,138,Disease
+Rylan Jerde,42,1,4,148,244,0,178,Disease
+Willam Sanford-McLaughlin,68,0,3,120,211,0,115,Disease
+Tai Koss,41,1,3,130,214,0,168,Disease
+Yoel Mayer Sr.,64,0,1,130,303,1,122,Disease
+Annis Metz-Renner,49,0,1,130,269,1,163,Disease
+Soloman Hayes-Schmitt,51,0,3,120,295,0,157,Disease
+Gavin Wyman,70,1,2,156,245,0,143,Disease
+Liddie Gibson,60,0,4,150,240,1,171,Disease
+Dillon Reinger MD,42,1,3,130,180,1,150,Disease
+Christoper Mayert Jr.,71,0,1,112,149,1,125,Disease
+Dr. Kolton Rolfson,39,0,3,138,220,1,152,Disease
+Vic Halvorson-Nolan,58,0,1,130,197,1,131,Disease
+Dr. Mont Labadie,56,1,2,130,221,0,163,Disease
+Alpha Heller DVM,55,0,2,132,342,1,166,Disease
+Ms. Jaunita Armstrong DVM,38,1,3,138,175,1,173,Disease
+Micheal Hansen-Heathcote,67,1,1,120,229,0,129,No Disease
+Kit Wilkinson,62,0,1,140,268,0,160,No Disease
+Mathias Monahan,63,1,1,130,254,0,147,No Disease
+Mira Hettinger,60,1,1,130,206,0,132,No Disease
+Mabell Vandervort,43,1,1,120,177,0,120,No Disease
+Dr. Garnett McClure,50,1,3,140,233,1,163,No Disease
+Joseluis Morar,58,1,1,128,216,0,131,No Disease
+Terance Kuhn Jr.,60,1,1,145,282,0,142,No Disease
+Tracee Hoppe,59,1,1,170,326,0,140,No Disease
+Marina Toy,65,1,1,110,248,0,158,No Disease
+Cheyenne Batz,44,1,1,110,197,0,177,No Disease
+Dr. Mariyah McGlynn,58,1,1,150,270,0,111,No Disease
+Mr. Shaun Bogisich MD,68,1,3,180,274,0,150,No Disease
+Ms. Patti Nikolaus,61,0,1,145,307,0,146,No Disease
+Authur Watsica PhD,43,0,1,132,341,0,136,No Disease
+Frederick Gusikowski,70,1,1,145,174,1,125,No Disease
+Garett Farrell-Schroeder,58,1,1,125,300,0,171,No Disease
+Marius Konopelski,60,1,1,140,293,0,170,No Disease
+Amberly Vandervort MD,64,1,1,145,212,0,132,No Disease
+Desiree Koelpin,69,1,3,140,254,0,146,No Disease
+Kenyon Mertz,53,1,1,123,282,1,95,No Disease
+Ms. Lossie Lubowitz MD,61,1,4,134,234,1,145,No Disease
+Stafford Borer,58,1,1,100,234,1,156,No Disease
+Mr. Roll Blanda,52,1,1,125,212,1,168,No Disease
+Rahn Will,58,0,2,136,319,0,152,No Disease
+Tye Stroman-Corkery,40,1,1,152,223,1,181,No Disease
+Eusebio Kemmer,61,1,1,140,207,0,138,No Disease
+Orvis Daugherty-Medhurst,59,1,4,134,204,1,162,No Disease
+Antione Howell-Ritchie,57,1,2,154,232,0,164,No Disease
+Hennie Walter-Thompson,57,1,1,110,335,1,143,No Disease
+Brandan Satterfield,61,1,1,148,203,1,161,No Disease
+Maymie Donnelly,58,1,1,114,318,2,140,No Disease
+Chandler Schuster DVM,44,1,1,120,169,1,144,No Disease
+Jaymes Flatley III,63,1,1,140,187,0,144,No Disease
+Pattie Boyle PhD,59,1,1,164,176,0,90,No Disease
+Kylah Lindgren PhD,57,0,1,140,241,1,123,No Disease
+Robbin Rippin,68,1,1,144,193,1,141,No Disease
+Dr. Racheal Hansen,57,0,2,130,236,0,174,No Disease

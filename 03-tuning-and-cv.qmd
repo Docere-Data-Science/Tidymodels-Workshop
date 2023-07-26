@@ -1,0 +1,267 @@
+---
+title: "Cross-Validation and Tuning"
+format: html
+editor: visual
+theme: minty
+---
+
+## Setup
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(here)
+```
+
+### Data
+
+In the previous work, we started with `ha_1`, and then `ha_2` magically appeared for us to evaluate our model!
+
+Of course, this is because I randomly "hid" half the data from you, in `ha_2`, before we started.
+
+Now we'll see how one would go about the model selection process starting from all the data:
+
+```{r}
+ha <- read_csv(here("Data", "ha_all.csv")) %>%
+  mutate(
+    cp = factor(cp),
+    sex = factor(sex),
+    restecg = factor(restecg),
+    diagnosis = factor(diagnosis)
+  ) %>%
+  drop_na()
+```
+### Recipes and Specs
+
+Copy over your recipe and specification setup code from the last notebook.
+
+```{r}
+
+
+```
+
+```{r}
+
+
+```
+
+::: callout-tip
+
+Don't forget to replace `data = ha_1` with `data = ha`.  In principle this doesn't really matter - the data isn't being used in the recipe function, it is only showing the structure of the dataset.  
+
+But we no longer have an object named `ha_1` in this notebook!
+
+:::
+
+## Cross-Validation
+
+Recall that our process for evaluating the *accuracy* of a particular workflow went like this:
+
+1.  **Fit** the workflow to some *training* data.
+2.  **Predict** values for a separate set of *test* data.
+3.  **Calculate** the accuracy metric for those predictions.
+
+Previously we just did this for one possible *test-training split*. But what if we wanted to try the *whole process* on *many different splits*?
+
+And what if we could combine all those steps automatically with one function???
+
+First, let's remake a workflow:
+
+```{r}
+wflow_lr <- workflow() %>%
+  add_model(lr_spec) %>%
+  add_recipe(rec_3)
+```
+
+
+Then, let's establish some splits:
+
+```{r}
+ha_cv <- vfold_cv(ha, v = 5)
+
+ha_cv
+```
+
+Then, `tidymodels` lets us do everything in one function:
+
+```{r}
+
+cv_results <- wflow_lr %>%
+  fit_resamples(ha_cv,
+                metrics = metric_set(accuracy))
+```
+
+A lot is happening in those two lines of code!  Let's recap the process:
+
+1. From the first fold in `ha_cv`, take only the 218 samples in the training split.  Fit the `wflow_lr` workflow on these.
+
+2. From the first fold in `ha_cv`, take only the 55 test samples.  Use the fitted workflow to predict diagnoses of these.
+
+3. Calculate the `accuracy` of the predictions on the 55 test samples.
+
+4. Repeat 1-3 for the other folds in `ha_cv`.
+
+5. Take the average of the 5 accuracies calculated.
+
+Finally, we are left with **one single number**, the average of the five cross-validated accuracies, measuring the "success" of the workflow:
+
+```{r}
+cv_results %>% collect_metrics()
+```
+
+## Workflow Sets
+
+Let's recap the number of options for modeling process that we have given ourselves in this short time:
+
+-   Four different recipes
+-   Three different models specs
+
+If we tried every possible combination of options, we would have to fit 12 models.
+
+Instead of typing each one up by hand, we can tell `tidymodels` to make us a *set* of workflows, and then apply cross-validation to all of the options.
+
+```{r}
+ha_models <- 
+   workflow_set(
+      models = list(LogReg = lr_spec, 
+                    KNN = knn_spec, 
+                    DecTree = dt_spec),
+      preproc = list(simple = rec_1, 
+                     simple_log = rec_2,
+                     full = rec_3,
+                     full_plus = rec_4),
+      cross = TRUE
+   )
+```
+
+A few things to note in this code:
+
+-   The recipe objects and specification objects were created earlier. There's no shortcut around this - you always need to make those decisions manually!
+
+-   We gave all our recipes and specifications descriptive names, to help us differentiate them later.
+
+-   We set `cross = TRUE`, meaning that *all* possible recipe/spec combos will be tried.
+
+More information and examples about workflowsets can be found at: https://workflowsets.tidymodels.org/
+
+Once we have a workflowset, we can automatically compare all our options at once:
+
+```{r}
+results <- ha_models %>%
+  workflow_map("fit_resamples", 
+               resamples = ha_cv,
+                metrics = metric_set(accuracy))
+
+results
+```
+
+```{r}
+results %>% rank_results()
+```
+
+```{r}
+results %>% autoplot()
+```
+
+### Exercises
+
+1. Based on the above output, what model would you choose to put into production?
+
+
+2. Suppose you wanted to study the metric ROC-AUC (`roc_auc` in `tidymodels`) instead of accuracy. What would you need to change in the above code?
+
+
+3. It seems like workflowsets makes it easy to try many different specs and recipes.  What drawbacks do you see to trying more options?
+
+
+## Tuning
+
+If it already feels like we have a lot of model options to try, buckle up, because we have one final complication to add.
+
+Remember how we chose, for KNN, to use 10 as our number of neighbors?
+
+Well, what if we would have better prediction results with a different value of K?
+
+Just as we used cross-validated accuracy to decide on our best workflow, we can also try many different variants of the KNN model specification and compare those.
+
+We start by creating a specification that doesn't commit to a value of `neighbors` - instead, it plans to **tune** that parameter.
+
+```{r}
+knn_tune_spec <- nearest_neighbor(neighbors = tune()) %>%
+  set_mode("classification")
+```
+
+Next, we make a workflow using our *best* recipe:
+
+```{r}
+wflow_knn_tune <- workflow() %>%
+  add_model(knn_tune_spec) %>%
+  add_recipe(rec_3)
+```
+
+Finally, we decide what possible values of `neighbors` we are willing to consider.
+
+```{r}
+k_vals <- tibble(
+  neighbors = 2:50
+)
+
+k_vals
+```
+
+::: callout-warning
+
+The name of the data frame can be anything, but the name of the column containing values to use *must* be the same as the name of the input to the `tidymodels` function, i.e., `neighbors`.
+
+There are some shortcuts in `tidymodels` for choosing reasonable possible values.
+
+See this tutorial for a deeper treatment: https://www.tidymodels.org/start/tuning/
+
+:::
+
+Now, we are ready to let `tidymodels` do everything for us!
+
+```{r}
+tune_results <- wflow_knn_tune %>%
+  tune_grid(
+    resamples = ha_cv,
+    grid = k_vals,
+    metrics = metric_set(accuracy)
+  )
+```
+
+This process is *just like* workflow sets. A cross-validation is being performed for *each* of the possible workflows: the one with neighbors = 2, the one with neighbors = 3, ...
+
+```{r}
+tune_results %>% 
+  collect_metrics() %>%
+  slice_max(mean)
+```
+
+### Exercises
+
+1. What value of `neighbors` results in the best ROC-AUC score?
+
+2. What parameters in the decision tree model are available to be tuned?  
+*(If you're feeling ambitious, try one out!)*
+
+3. Is there any value of `neighbors` for with the KNN workflow is better than our "best" workflow from earlier, the logistic regression?
+
+4. How many times was a model *fit* when the chunk below was run?
+
+```{r}
+tune_results <- wflow_knn_tune %>%
+  tune_grid(
+    resamples = ha_cv,
+    grid = k_vals,
+    metrics = metric_set(accuracy)
+  )
+```
+
+::: callout-tip
+
+It *is* possible to embed the tuning process inside workflowsets, and run all your options together.  However, this is a bit more complicated, and only worth your effort to learn if you find yourself doing a large amount of tuning *and* many different model types and recipes.
+
+:::

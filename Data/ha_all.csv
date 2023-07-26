@@ -1,0 +1,274 @@
+Name,age,sex,cp,trtbps,chol,restecg,thalach,diagnosis
+Alexander Abbott,63,1,4,145,233,0,150,Disease
+Ms. Carlota Hammes MD,37,1,3,130,250,1,187,Disease
+Dr. Isabelle Hettinger DVM,56,1,2,120,236,1,178,Disease
+Oley Stoltenberg-Konopelski,57,0,1,120,354,1,163,Disease
+Merilyn Kuhn,57,1,1,140,192,1,148,Disease
+Parrish Langworth-Lemke,56,0,2,140,294,0,153,Disease
+Almedia Morar,44,1,2,120,263,1,173,Disease
+Catharine Schowalter DDS,52,1,3,172,199,1,162,Disease
+Nicole Jones,57,1,3,150,168,1,174,Disease
+Shaylee Schmeler,54,1,1,140,239,1,160,Disease
+Mckayla Cummings,48,0,3,130,275,1,139,Disease
+Tamiko Schaefer,49,1,2,130,266,1,171,Disease
+Irwin Cummings,58,0,4,150,283,0,162,Disease
+Liston Medhurst DVM,50,0,3,120,219,1,158,Disease
+Baby Bode,58,0,3,120,340,1,172,Disease
+Mr. Ryker Hoppe,66,0,4,150,226,1,114,Disease
+Seaborn Wehner,43,1,1,150,247,1,171,Disease
+Johney Wiegand,69,0,4,140,239,1,151,Disease
+Benjiman Huel,44,1,3,130,233,1,179,Disease
+Jade Pfeffer,61,1,3,150,243,1,137,Disease
+Alline Gutkowski,71,0,2,160,302,1,162,Disease
+Burgess Aufderhar,59,1,3,150,212,1,157,Disease
+Dr. Jacquelin Schultz PhD,51,1,3,110,175,1,123,Disease
+Reggie O'Reilly II,65,0,3,140,417,0,157,Disease
+Doc Koss MD,53,1,3,130,197,0,152,Disease
+Dr. Daulton Koepp PhD,41,0,2,105,198,1,168,Disease
+Grover Veum I,65,1,1,120,177,1,140,Disease
+Domenico Kihn,44,1,2,130,219,0,188,Disease
+Dr. Junie Schultz,51,1,4,125,213,0,125,Disease
+Dr. Harriett Yost DVM,46,0,3,142,177,0,160,Disease
+Verena Tillman,54,0,3,135,304,1,170,Disease
+Miss Annika Halvorson PhD,54,1,3,150,232,0,165,Disease
+Rodney Lockman,65,0,3,155,269,1,148,Disease
+Dani Dare MD,65,0,3,160,360,0,151,Disease
+Jocelyn Thompson DDS,51,0,3,140,308,0,142,Disease
+Sarrah Heller,48,1,2,130,245,0,180,Disease
+Marius Cremin,45,1,1,104,208,0,148,Disease
+Jep Nicolas,53,0,1,130,264,0,143,Disease
+Mr. Cayden Kling,39,1,3,140,321,0,182,Disease
+Burnett Bednar-Moore,52,1,2,120,325,1,172,Disease
+Dr. Ottie Barton,44,1,3,140,235,0,180,Disease
+Mr. Tomie Kessler,47,1,3,138,257,0,156,Disease
+Kandace Weissnat,53,0,3,128,216,0,115,Disease
+Deena Balistreri,53,0,1,138,234,0,160,Disease
+Phylicia Abernathy,51,0,3,130,256,0,149,Disease
+Mrs. Jacquline Marquardt,66,1,1,120,302,0,151,Disease
+Dr. Montrell Botsford,62,1,3,130,231,1,146,Disease
+Diallo Berge,44,0,3,108,141,1,175,Disease
+Chloe Ferry-Runte,63,0,3,135,252,0,172,Disease
+Ozella Lockman,48,1,1,122,222,0,186,Disease
+Wilford Rohan,45,1,1,115,260,0,185,Disease
+Mahalia DuBuque DVM,34,1,4,118,182,0,174,Disease
+Jabbar Walsh,57,0,1,128,303,0,159,Disease
+Sherri Goldner,54,1,2,108,309,1,156,Disease
+Bama Schmeler-Dicki,52,1,4,118,186,0,190,Disease
+Clyda Abernathy DVM,41,1,2,135,203,1,132,Disease
+Matilda Halvorson,58,1,3,140,211,0,165,Disease
+Levern Trantow III,35,0,1,138,183,1,182,Disease
+Tucker DuBuque,51,1,3,100,222,1,143,Disease
+Clytie Bartell-Berge,45,0,2,130,234,0,175,Disease
+Elisabeth Nicolas,44,1,2,120,220,1,170,Disease
+Carlo Becker,62,0,1,124,209,1,163,Disease
+Juan Hyatt,54,1,3,120,258,0,147,Disease
+Mr. Foster Zieme,51,1,3,94,227,1,154,Disease
+Mr. Martell Toy,29,1,2,130,204,0,202,Disease
+Jewel Kuhn,51,1,1,140,261,0,186,Disease
+Albin Ziemann,43,0,3,122,213,1,165,Disease
+Nancie Baumbach,51,1,3,125,245,0,166,Disease
+Brande Bailey,59,1,2,140,221,1,164,Disease
+Mr. Collin Cummings IV,52,1,2,128,205,1,184,Disease
+Nolan Bartell,41,1,3,112,250,1,179,Disease
+Lashawn Zieme,45,1,2,128,308,0,170,Disease
+Dr. Cathern Heathcote,60,0,3,102,318,1,160,Disease
+Mr. Ted Green,52,1,4,152,298,1,178,Disease
+Harlene Turner,42,0,1,102,265,0,122,Disease
+Sabastian Mitchell,67,0,3,115,564,0,160,Disease
+Julious Grady,54,0,3,110,214,1,158,Disease
+May McDermott,58,0,1,100,248,0,122,Disease
+Louis Weissnat,57,1,1,132,207,1,168,Disease
+Eryn Walker,52,1,3,138,223,1,169,Disease
+Alfreda Cronin,54,0,2,132,288,0,159,Disease
+Caryl Conn,45,0,2,112,160,1,138,Disease
+Horacio Heathcote-Bosco,53,1,1,142,226,0,111,Disease
+Dr. Jaymes Dicki,62,0,1,140,394,0,157,Disease
+Ethyle Muller,52,1,1,108,233,1,147,Disease
+Dr. Guido Littel,43,1,3,130,315,1,162,Disease
+Rylan Jerde,42,1,4,148,244,0,178,Disease
+Elwyn Langosh,59,1,4,178,270,0,145,Disease
+Pleas Tremblay DDS,63,0,2,140,195,1,179,Disease
+Deloris Jacobs,42,1,3,120,240,1,194,Disease
+Dangelo Shields,50,1,3,129,196,1,163,Disease
+Willam Sanford-McLaughlin,68,0,3,120,211,0,115,Disease
+Devin Windler,45,0,1,138,236,0,152,Disease
+Avery Kreiger,64,0,1,180,325,1,154,Disease
+Denese Christiansen-Hoppe,57,1,3,150,126,1,173,Disease
+Marcel Hermiston,64,0,3,140,313,1,133,Disease
+Birdella Hirthe-Dare,43,1,1,110,211,1,161,Disease
+Nicolle Muller-Jacobs,55,1,2,130,262,1,155,Disease
+Diallo Hilll-Bradtke,37,0,3,120,215,1,170,Disease
+Tai Koss,41,1,3,130,214,0,168,Disease
+Will Hettinger,56,1,4,120,193,0,162,Disease
+Nunzio Goyette III,46,0,2,105,204,1,172,Disease
+Jayson Zieme,46,0,1,138,243,0,152,Disease
+Yoel Mayer Sr.,64,0,1,130,303,1,122,Disease
+Dr. Melvin Hessel III,41,0,3,112,268,0,172,Disease
+Cristian Nienow DDS,54,0,3,108,267,0,167,Disease
+Mr. Sergio Rowe Sr.,39,0,3,94,199,1,179,Disease
+Kiera Hartmann,34,0,2,118,210,1,192,Disease
+Ryann Stanton DVM,67,0,3,152,277,1,172,Disease
+Latoyia Farrell DVM,52,0,3,136,196,0,169,Disease
+Bartholomew Maggio,74,0,2,120,269,0,121,Disease
+Jeff Krajcik IV,54,0,3,160,201,1,163,Disease
+Layne Feil DVM,49,0,2,134,271,1,162,Disease
+Lashanda Hagenes,42,1,2,120,295,1,162,Disease
+Dulcie Reichel,41,1,2,110,235,1,153,Disease
+Coletta Schimmel,41,0,2,126,306,1,163,Disease
+Annis Metz-Renner,49,0,1,130,269,1,163,Disease
+Eliot Conn Sr.,60,0,3,120,178,1,96,Disease
+Kent Ward PhD,62,1,2,128,208,0,140,Disease
+Stan Lemke,57,1,1,110,201,1,126,Disease
+Sean Lakin,64,1,1,128,263,1,105,Disease
+Soloman Hayes-Schmitt,51,0,3,120,295,0,157,Disease
+Mikaila Block,43,1,1,115,303,1,181,Disease
+Dovie Friesen,42,0,3,120,209,1,173,Disease
+Cuba Doyle-McKenzie,67,0,1,106,223,1,142,Disease
+Madlyn Carter,76,0,3,140,197,2,116,Disease
+Gavin Wyman,70,1,2,156,245,0,143,Disease
+Fay Schaefer-Spencer,44,0,3,118,242,1,149,Disease
+Liddie Gibson,60,0,4,150,240,1,171,Disease
+Cedric Treutel,44,1,3,120,226,1,169,Disease
+Dillon Reinger MD,42,1,3,130,180,1,150,Disease
+Neil Yost,66,1,1,160,228,0,138,Disease
+Christoper Mayert Jr.,71,0,1,112,149,1,125,Disease
+Ms. Kimora Gerhold PhD,64,1,4,170,227,0,155,Disease
+Deeann Littel,66,0,3,146,278,0,152,Disease
+Dr. Kolton Rolfson,39,0,3,138,220,1,152,Disease
+Vic Halvorson-Nolan,58,0,1,130,197,1,131,Disease
+Kylee Rodriguez,47,1,3,130,253,1,179,Disease
+Rosalinda Beahan,35,1,2,122,192,1,174,Disease
+Lum O'Reilly,58,1,2,125,220,1,144,Disease
+Dr. Mont Labadie,56,1,2,130,221,0,163,Disease
+Mr. Case Buckridge II,56,1,2,120,240,1,169,Disease
+Alpha Heller DVM,55,0,2,132,342,1,166,Disease
+Marget Hayes,41,1,2,120,157,1,182,Disease
+Ms. Jaunita Armstrong DVM,38,1,3,138,175,1,173,Disease
+Mr. Delwin VonRueden I,38,1,3,138,175,1,173,Disease
+Jillian Schuppe-Larson,67,1,1,160,286,0,108,No Disease
+Micheal Hansen-Heathcote,67,1,1,120,229,0,129,No Disease
+Kit Wilkinson,62,0,1,140,268,0,160,No Disease
+Mathias Monahan,63,1,1,130,254,0,147,No Disease
+Theresia Kunde,53,1,1,140,203,0,155,No Disease
+Eino Keebler,56,1,3,130,256,0,142,No Disease
+Miss Jule Aufderhar,48,1,2,110,229,1,168,No Disease
+Chauncy Price-Spinka,58,1,3,132,224,0,173,No Disease
+Mira Hettinger,60,1,1,130,206,0,132,No Disease
+Mr. Vernal Kautzer IV,40,1,1,110,167,0,114,No Disease
+Magnolia Cassin,60,1,1,117,230,1,160,No Disease
+Gillian Hane,64,1,3,140,335,1,158,No Disease
+Mabell Vandervort,43,1,1,120,177,0,120,No Disease
+Merna Bins,57,1,1,150,276,0,112,No Disease
+Jaimie Koepp,55,1,1,132,353,1,132,No Disease
+Nicholaus Rice,65,0,1,150,225,0,114,No Disease
+Silver Pagac,58,1,3,112,230,0,165,No Disease
+Alexandria Pagac,50,1,1,150,243,0,128,No Disease
+Ennis Kreiger II,44,1,1,112,290,0,153,No Disease
+Henri Welch,60,1,1,130,253,1,144,No Disease
+Erline Skiles,54,1,1,124,266,0,109,No Disease
+Dr. Garnett McClure,50,1,3,140,233,1,163,No Disease
+Amina Corkery,41,1,1,110,172,0,158,No Disease
+Gertie Mertz,51,0,1,130,305,1,142,No Disease
+Joseluis Morar,58,1,1,128,216,0,131,No Disease
+Delois Wilkinson,54,1,1,120,188,1,113,No Disease
+Terance Kuhn Jr.,60,1,1,145,282,0,142,No Disease
+Bailey Von,60,1,3,140,185,0,155,No Disease
+Tracee Hoppe,59,1,1,170,326,0,140,No Disease
+Wayland Windler,46,1,3,150,231,1,147,No Disease
+Rexford Willms,67,1,1,125,254,1,163,No Disease
+Dusty Mohr,62,1,1,120,267,1,99,No Disease
+Marina Toy,65,1,1,110,248,0,158,No Disease
+Cheyenne Batz,44,1,1,110,197,0,177,No Disease
+Trish Willms,60,1,1,125,258,0,141,No Disease
+Dr. Mariyah McGlynn,58,1,1,150,270,0,111,No Disease
+Mr. Shaun Bogisich MD,68,1,3,180,274,0,150,No Disease
+Lalla Adams,52,1,1,128,255,1,161,No Disease
+Colton Doyle,59,1,1,110,239,0,142,No Disease
+Tanika Oberbrunner,60,0,1,150,258,0,157,No Disease
+Pepper Howell,49,1,3,120,188,1,139,No Disease
+Gayle Fisher,57,1,3,128,229,0,150,No Disease
+Dr. Georgia Hilll DVM,61,1,1,120,260,1,140,No Disease
+Levina Stanton-Green,39,1,1,118,219,1,140,No Disease
+Ms. Patti Nikolaus,61,0,1,145,307,0,146,No Disease
+Kegan O'Conner DDS,56,1,1,125,249,0,144,No Disease
+Authur Watsica PhD,43,0,1,132,341,0,136,No Disease
+Miles Wolf,62,0,3,130,263,1,97,No Disease
+Mickie Wehner,63,1,1,130,330,0,132,No Disease
+Lamont Lockman-Moen,65,1,1,135,254,0,127,No Disease
+Zina Hackett DDS,63,0,1,150,407,0,154,No Disease
+Ms. Salma Hayes,65,1,4,138,282,0,174,No Disease
+Hermina Christiansen,56,0,1,200,288,0,133,No Disease
+Otha Fahey,54,1,1,110,239,1,126,No Disease
+Frederick Gusikowski,70,1,1,145,174,1,125,No Disease
+Lish Bergnaum-Bradtke,62,1,2,120,281,0,103,No Disease
+Ms. Margery Gerhold,35,1,1,120,198,1,130,No Disease
+Shaquita Romaguera,59,1,4,170,288,0,159,No Disease
+Aedan Spencer,64,1,3,125,309,1,131,No Disease
+Bret Stanton,47,1,3,108,243,1,152,No Disease
+Dink Fay,57,1,1,165,289,0,124,No Disease
+Cynthia Welch-Hammes,55,1,1,160,289,0,145,No Disease
+Mrs. Mafalda Herzog MD,64,1,1,120,246,0,96,No Disease
+Carlotta Swift-Ortiz,70,1,1,130,322,0,109,No Disease
+Miss Mya Terry,51,1,1,140,299,1,173,No Disease
+Garett Farrell-Schroeder,58,1,1,125,300,0,171,No Disease
+Marius Konopelski,60,1,1,140,293,0,170,No Disease
+Mr. Finnegan Tremblay,77,1,1,125,304,0,162,No Disease
+Jazlene Dooley-Kohler,35,1,1,126,282,0,156,No Disease
+Jarrett Welch,70,1,3,160,269,1,112,No Disease
+Sister Kovacek,59,0,1,174,249,1,143,No Disease
+Amberly Vandervort MD,64,1,1,145,212,0,132,No Disease
+Mrs. Pearla Harris DVM,57,1,1,152,274,1,88,No Disease
+Miss Alize Gorczany,56,1,1,132,184,0,105,No Disease
+Mrs. Denese Batz,48,1,1,124,274,0,166,No Disease
+Enoch Paucek,56,0,1,134,409,0,150,No Disease
+Ms. Joi Cartwright,66,1,2,160,246,1,120,No Disease
+Britta Koss MD,54,1,2,192,283,0,195,No Disease
+Desiree Koelpin,69,1,3,140,254,0,146,No Disease
+Atha Feest,43,1,1,132,247,0,143,No Disease
+Miss Sanaa Turcotte,62,0,1,138,294,1,106,No Disease
+Cherryl Terry-Mayert,59,1,4,160,273,0,125,No Disease
+Arlington Hintz,58,1,1,128,259,0,130,No Disease
+Charlton Kulas,50,1,1,144,200,0,126,No Disease
+Mr. Florian Walter MD,62,0,1,150,244,1,154,No Disease
+Zettie Gleason DDS,38,1,4,120,231,1,182,No Disease
+Dr. Dejuan Jakubowski,66,0,1,178,228,1,165,No Disease
+Ismael Jacobi,52,1,1,112,230,1,160,No Disease
+Kenyon Mertz,53,1,1,123,282,1,95,No Disease
+Dino Erdman,63,0,1,108,269,1,169,No Disease
+Mr. Amit Bartoletti Sr.,54,1,1,110,206,0,108,No Disease
+Bette O'Reilly PhD,66,1,1,112,212,0,132,No Disease
+Miss Myrtle Gleason PhD,55,0,1,180,327,2,117,No Disease
+Keagan Kohler,49,1,3,118,149,0,126,No Disease
+Lem Wiegand,54,1,1,122,286,0,116,No Disease
+Zula Goyette,56,1,1,130,283,0,103,No Disease
+Dr. Guthrie Waelchi III,46,1,1,120,249,0,144,No Disease
+Ms. Lossie Lubowitz MD,61,1,4,134,234,1,145,No Disease
+Dr. Raekwon Gulgowski,67,1,1,120,237,1,71,No Disease
+Stafford Borer,58,1,1,100,234,1,156,No Disease
+Mr. Roll Blanda,52,1,1,125,212,1,168,No Disease
+Rillie Bayer DDS,58,1,1,146,218,1,105,No Disease
+Dr. Tyriq Weimann,57,1,2,124,261,1,141,No Disease
+Rahn Will,58,0,2,136,319,0,152,No Disease
+Norine Bernier,61,1,1,138,166,0,125,No Disease
+Geraldo Ziemann PhD,42,1,1,136,315,1,125,No Disease
+Jerrel Klocko,52,1,1,128,204,1,156,No Disease
+Cristian Reichel,59,1,3,126,218,1,134,No Disease
+Tye Stroman-Corkery,40,1,1,152,223,1,181,No Disease
+Eusebio Kemmer,61,1,1,140,207,0,138,No Disease
+Clayton Reinger,46,1,1,140,311,1,120,No Disease
+Orvis Daugherty-Medhurst,59,1,4,134,204,1,162,No Disease
+Antione Howell-Ritchie,57,1,2,154,232,0,164,No Disease
+Hennie Walter-Thompson,57,1,1,110,335,1,143,No Disease
+Bridgett Franecki,55,0,1,128,205,2,130,No Disease
+Brandan Satterfield,61,1,1,148,203,1,161,No Disease
+Maymie Donnelly,58,1,1,114,318,2,140,No Disease
+Mr. Willard Dickinson,58,0,1,170,225,0,146,No Disease
+Estefania Ratke,67,1,3,152,212,0,150,No Disease
+Chandler Schuster DVM,44,1,1,120,169,1,144,No Disease
+Jaymes Flatley III,63,1,1,140,187,0,144,No Disease
+Casandra Rodriguez,63,0,1,124,197,1,136,No Disease
+Pattie Boyle PhD,59,1,1,164,176,0,90,No Disease
+Kylah Lindgren PhD,57,0,1,140,241,1,123,No Disease
+Prudence Gorczany,45,1,4,110,264,1,132,No Disease
+Robbin Rippin,68,1,1,144,193,1,141,No Disease
+Dr. Racheal Hansen,57,0,2,130,236,0,174,No Disease

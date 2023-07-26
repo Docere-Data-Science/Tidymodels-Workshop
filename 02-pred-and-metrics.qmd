@@ -1,0 +1,229 @@
+---
+title: "Prediction and Metrics"
+format: html
+editor: visual
+theme: minty
+---
+
+## Setup
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(here)
+library(patchwork)
+```
+
+```{r}
+#| message: false
+
+ha_1 <- read_csv(here("Data", "ha_1.csv")) %>%
+  mutate(
+    cp = factor(cp),
+    sex = factor(sex),
+    restecg = factor(restecg),
+    diagnosis = factor(diagnosis)
+  ) %>%
+  drop_na()
+```
+
+## Making a workflow
+
+We have now established three model types that we want to try. Copy your code over from the previous notebook to establish those here:
+
+```{r}
+
+
+```
+
+We have also established four recipes we want to try. Copy your code over from the previous notebook to make those recipe objects:
+
+```{r}
+
+
+```
+
+Now, we'll need to put the pieces together to come up with a few full **workflows** - i.e., complete processes from data to prediction - that we want to try.
+
+For simplicity, we'll just include one recipe for now, but later you will see how to try more combinations without much extra effort!
+
+```{r}
+wflow_lr <- workflow() %>%
+  add_model(lr_spec) %>%
+  add_recipe(rec_3)
+
+wflow_dt <- workflow() %>%
+  add_model(dt_spec) %>%
+  add_recipe(rec_3)
+
+wflow_knn <- workflow() %>%
+  add_model(knn_spec) %>%
+  add_recipe(rec_3)
+
+```
+
+Take a look at one of these objects:
+
+```{r}
+wflow_knn
+```
+
+## Fitting the model
+
+Now, an important thing to note: **Absolutely no calculations or data transformations have been performed yet!**
+
+All of this effort has been to *establish our plan* - choosing a model, setting up a recipe, combining into workflows.
+
+But now we need to `fit` the model: to come up with the exact calculations based on our data that will determine our future prediction strategy.
+
+Fortunately, this is now easy!
+
+```{r}
+model_fit_lr <- wflow_lr %>%
+  fit(ha_1)
+
+model_fit_dt <- wflow_dt %>%
+  fit(ha_1)
+
+model_fit_knn <- wflow_knn %>%
+  fit(ha_1)
+```
+
+If you are interested in checking out the fitted model, the object itself will give you some useful information:
+
+```{r}
+model_fit_lr
+```
+
+Or, you can look for the summary output that you might be used to from the *engine* version:
+
+```{r}
+engine_fit_lr <- model_fit_lr %>% 
+  extract_fit_engine() 
+
+engine_fit_lr %>%
+  summary()
+```
+
+## Predicting from fitted models
+
+Lucky us! Some new data has been gathered about heart disease in some new patients. We'll load it and put it through the same cleaning process as we did for the original data.
+
+```{r}
+#| message: false
+ha_2 <- read_csv(here("Data", "ha_2.csv")) %>%
+  mutate(
+    cp = factor(cp),
+    sex = factor(sex),
+    restecg = factor(restecg),
+    diagnosis = factor(diagnosis)
+  ) %>%
+  drop_na()
+```
+
+This is a perfect opportunity to see what our fitted models might have predicted for these new patients.
+
+```{r}
+preds_lr <- model_fit_lr %>%
+  predict(ha_2)
+
+preds_dt <- model_fit_dt %>%
+  predict(ha_2)
+
+preds_knn <- model_fit_knn %>%
+  predict(ha_2)
+```
+
+Each of these objects is a *data frame*, containing one row called `.pred_class`, which gives the predicted diagnosis for each person.
+
+```{r}
+preds_lr
+```
+
+::: callout-warning
+It is **extremely important** that the new data, `ha_2` has the exact same column names and structures as the one we fitted the models on, `ha_1`.
+
+This is why preprocessing with recipes is such a helpful approach - we avoid the risk of making permanent changes to `ha_1` that we forget to make to `ha_2`.
+
+In the workflow, the recipe applied to `ha_1` during the fit process will automatically also be applied to `ha_2` during the predict process.
+:::
+
+Now, let's see how we did:
+
+```{r}
+res <- tibble(
+  Truth = ha_2$diagnosis,
+  LogReg_Preds = preds_lr$.pred_class,
+  DecTree_Preds = preds_dt$.pred_class,
+  KNN_Preds = preds_knn$.pred_class
+)
+
+res
+```
+
+## Model evaluation
+
+So, which of our model types performed best? It's hard to say just by looking.
+
+We need to choose a **metric**: A number to calculate that measures how well the model predictions achieved the goal.
+
+One simple metric in this case might be *accuracy*: How many predicted categories were correct?
+
+We'll use the `tidymodels` function called `accuracy()` do to the computation quickly:
+
+```{r}
+res %>%
+  accuracy(
+    truth = Truth,
+    estimate = LogReg_Preds
+  )
+
+res %>%
+  accuracy(
+    truth = Truth,
+    estimate = DecTree_Preds
+  )
+
+res %>%
+  accuracy(
+    truth = Truth,
+    estimate = KNN_Preds
+  )
+
+```
+
+## Exercises
+
+1.  Which of the three model specifications achieved the best accuracy?
+
+    ß
+
+2.  Would you expect the same results if you used a different recipe? Why or why not?
+
+3.  Copy the relevant code above, then alter it to use recipe 2 instead of recipe 3. What changes?
+
+```{r}
+
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+
+
+```
+
+4.  From all the six options (three specifications with recipe 3, three specifications with recipe 2), which one would you prefer to use?
