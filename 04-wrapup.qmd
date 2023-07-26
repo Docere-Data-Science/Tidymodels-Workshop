@@ -1,0 +1,135 @@
+---
+title: "Last steps and more resources"
+format: html
+editor: visual
+theme: minty
+---
+
+## Setup
+
+```{r}
+#| message: false
+
+library(tidyverse)
+library(tidymodels)
+library(here)
+```
+
+
+```{r}
+ha <- read_csv(here("Data", "ha_all.csv")) %>%
+  mutate(
+    cp = factor(cp),
+    sex = factor(sex),
+    restecg = factor(restecg),
+    diagnosis = factor(diagnosis)
+  ) %>%
+  drop_na()
+```
+
+## The Final Model
+
+We have now gone through a large amount of effort to arrive at our final best choice of predictive workflow to optimize accuracy:
+
+```{r}
+lr_spec <- logistic_reg()
+
+rec_3 <- recipe(diagnosis ~ ., 
+                data = ha) %>%
+  update_role(Name, 
+              new_role = "ID") %>%
+  step_dummy(cp) %>%
+  step_dummy(sex)  %>%
+  step_dummy(restecg)
+
+wflow_final <- workflow() %>%
+  add_model(lr_spec) %>%
+  add_recipe(rec_3)
+```
+
+We are now ready to fit the final model on **all** our data, not just on the cross-validation training splits.
+
+```{r}
+final_model <- wflow_final %>%
+  fit(ha)
+```
+
+What do we do with this?  Well, that depends on your context.
+
+You might be trying to learn what factors impact heart risk.  In that case, you would examine the information contained in the final fitted model:
+
+```{r}
+final_model %>% 
+  extract_fit_engine() %>% 
+  summary()
+```
+
+On the other hand, you might be building an AI tool to automatically diagnose incoming patients.  You'd want to put your final model "into production" - i.e., add the code into a larger process.
+
+### A holdout set
+
+I have one final trick up my sleeve.  All this time, when I told you I had given you all the heart risk data we had, I lied.  In fact, I set aside a random 10% of the dataset before we began:
+
+```{r}
+ha_holdout <- read_csv(here("Data", "ha_holdout.csv")) %>%
+  mutate(
+    cp = factor(cp),
+    sex = factor(sex),
+    restecg = factor(restecg),
+    diagnosis = factor(diagnosis)
+  ) %>%
+  drop_na()
+```
+
+Why did I do this?
+
+Well, we used cross-validated metrics to describe "how good" each model was.  Then we chose our final model based on those performances.
+
+But is the cross-validated accuracy of our best model (around 0.78) *really* a good guess about how it will perform on future data?  What if this is the highest value on *these particular splits*, and it's an overestimate of our performance?
+
+The holdout set lets us do one last model evaluation, as a way to "guess" how our predictions will fare in the future.
+
+```{r}
+preds_holdout <- final_model %>%
+  predict(ha_holdout)
+
+res <- tibble(
+  Truth = ha_holdout$diagnosis,
+  Preds = preds_holdout$.pred_class
+)
+
+res %>% 
+  accuracy(
+    truth = Truth,
+    estimate = Preds
+  )
+```
+
+This value is, as expected, slightly lower than our best cross-validated accuracy.
+
+We might report back to our client something like the following:
+
+> After comparing many models, we settled on a logistic regression model that included all predictors.  We should expect this model to achieve an accuracy of around 0.73 when predicting future patients' diagnoses.
+
+## Next directions
+
+What are some ways you can get better at Machine Learning and `tidymodels`?
+
+* Take a course or read a textbook to learn more model types and their underlying principles.
+
+* Read up on different metrics for classification and regression, and why you might prefer certain ones in certain situations.
+
+* Practice workflowsets and tuning to choose models. 
+
+## Resources
+
+* [Kaggle](www.kaggle.com) is a great place to find datasets and challenges to try out your model selection skills.
+
+* [An Introduction to Statistical Learning with R (ISLR)](https://www.statlearning.com/) is a wonderful textbook for learning more ML models.
+
+* [This accompanying online book](https://bookdown.org/taylordunn/islr-tidy-1655226885741/) reworks the ISLR code in tidyverse and tidymodels.
+
+* [Julia Silge's blog](https://juliasilge.com/blog/) contains a huge number of amazing walkthroughs of `tidymodels` analyses.  [Her YouTube videos](https://www.youtube.com/@JuliaSilge) are also fantastic.
+
+* Finally, [my course materials](https://github.com/Statistical-Learning-with-R) for my ML/tidymodels class are all online!  Stay in touch, I'm considering running a public version of the class next year!
+

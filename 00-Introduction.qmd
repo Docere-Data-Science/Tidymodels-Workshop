@@ -15,9 +15,9 @@ library(gt)
 
 :::: {.columns}
 
-::: {.column width="60%"}
+::: {.column width="40%"}
 
-![](https://www.kelly-bodwin.com/img/headshot_glasses_scarf_rounded.png){width=50%}
+![](https://www.kelly-bodwin.com/img/headshot_glasses_scarf_rounded.png){width=70%}
 
 ::: {style="font-size: 70%;"}
 
@@ -26,18 +26,28 @@ I'm **Kelly Bodwin**, and I'm an Associate Professor of Statistics and Data Scie
 
 :::
 
-::: {.column width="40%"}
+::: {.column width="60%"}
 Find me...
 
-**Website:** www.kelly-bodwin.com
+**Website:** 
 
-**Github:** kbodwin
+www.kelly-bodwin.com
 
-**Threads:** \@kellbod
+**Github:** 
 
-**Mastodon:** kellybodwin\@mastodon.social
+kbodwin
 
-**Email:** kbodwin@calpoly.edu
+**Threads:** 
+
+\@kellbod
+
+**Mastodon:** 
+
+kellybodwin\@mastodon.social
+
+**Email:** 
+
+kbodwin@calpoly.edu
 :::
 
 ::::
@@ -51,7 +61,7 @@ Find me...
 
 This:
 
-![](https://cdn1.iconfinder.com/data/icons/map-navigation-15/64/Journey-512.png)
+![](https://cdn1.iconfinder.com/data/icons/map-navigation-15/64/Journey-512.png){width=50%}
 :::
 
 ::: {.column width="50%"}
@@ -85,7 +95,7 @@ install.packages("usethis")
 2. Run the following to acquire all workshop materials:
 
 ```{r, eval = FALSE}
-usethis::use_course("kbodwin/tidymodels_workshop")
+usethis::use_course("Docere-Data-Science/Tidymodels-Workshop")
 ```
 
 3. Open the `installs.R` script and run all, if you have not.
@@ -94,7 +104,7 @@ usethis::use_course("kbodwin/tidymodels_workshop")
 
 Work on the cloud, with everything set up for you:
 
-[posit cloud link]
+[https://posit.cloud/spaces/394540/join?access_code=beJUUZNbFO7dZ_GKIkk0ZEMRXZ59Wsg6wGztLapP](https://posit.cloud/spaces/394540/join?access_code=beJUUZNbFO7dZ_GKIkk0ZEMRXZ59Wsg6wGztLapP)
 
 # The Machine Learning and Tidymodels Workflow
 
