@@ -151,11 +151,11 @@ Perhaps we've also noticed that the `chol` variable is a clearer predictor when 
 
 ```{r}
 p1 <- ha_1 %>%
-  ggplot(aes(x = chol, fill = output)) +
+  ggplot(aes(x = chol, fill = diagnosis)) +
   geom_density(alpha = 0.5)
 
 p2 <- ha_1 %>%
-  ggplot(aes(x = log(chol), fill = output)) +
+  ggplot(aes(x = log(chol), fill = diagnosis)) +
   geom_density(alpha = 0.5)
 
 p1/p2

@@ -3,6 +3,5 @@ install.packages(c("usethis",
                    "tidymodels",
                    "here",
                    "rpart",
-                   "glm",
                    "kknn",
                    "patchwork"))
