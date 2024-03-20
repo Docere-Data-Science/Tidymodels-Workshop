@@ -98,7 +98,9 @@ wflow_lr <- workflow() %>%
 Then, let's establish some splits:
 
 ```{r}
-ha_cv <- vfold_cv(ha, v = 5)
+ha_cv <- vfold_cv(ha, 
+                  v = 5,
+                  strata = cp)
 
 ha_cv
 ```
@@ -273,7 +275,7 @@ tune_results %>%
 > 35, 36, and 40 were all tied
 
 2.  What parameters in the decision tree model are available to be tuned?\
-*(If you're feeling ambitious, try one out!)*
+    *(If you're feeling ambitious, try one out!)*
 
 > `cost_complexity`, `tree_depth`, and `min_n`
 
@@ -286,7 +288,6 @@ wflow_dt_tune <- workflow() %>%
   add_recipe(rec_3)
 ```
 
-
 ```{r}
 cc_vals <- grid_regular(cost_complexity(),
                         levels = 10)
@@ -294,7 +295,6 @@ cc_vals <- grid_regular(cost_complexity(),
 cc_vals
 
 ```
-
 
 ```{r}
 tune_results <- wflow_dt_tune %>%
@@ -309,7 +309,6 @@ tune_results %>%
   slice_max(mean)
 ```
 
-
 3.  Is there any value of `neighbors` for with the KNN workflow is better than our "best" workflow from earlier, the logistic regression?
 
 > No, the max accuracy achieved was 0.74, and our logistic regression achieved 0.78.
@@ -318,7 +317,7 @@ tune_results %>%
 It *is* possible to embed the tuning process inside workflowsets, and run all your options together. However, this is a bit more complicated, and only worth your effort to learn if you find yourself doing a large amount of tuning *and* many different model types and recipes.
 :::
 
-4. How many times was a model *fit* when the chunk below was run?
+4.  How many times was a model *fit* when the chunk below was run?
 
 ```{r}
 tune_results <- wflow_knn_tune %>%
@@ -329,4 +328,4 @@ tune_results <- wflow_knn_tune %>%
   )
 ```
 
-> 245 times!  There were 49 different workflows (i.e. different values of `neighbors`), and for each one, we fit the model on each of 5 training sets from the cross-validation folds.
+> 245 times! There were 49 different workflows (i.e. different values of `neighbors`), and for each one, we fit the model on each of 5 training sets from the cross-validation folds.

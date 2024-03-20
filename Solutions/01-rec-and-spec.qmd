@@ -95,6 +95,10 @@ To find the name of the `tidymodels` function for a particular model, go to http
 ```{r}
 dt_spec <- decision_tree() %>%
   set_mode("classification")
+
+dt_spec
+
+?decision_tree
 ```
 
 2.  If you do not use `set_mode()`, what mode is chosen?
@@ -110,6 +114,8 @@ dt_spec <- decision_tree() %>%
 ```{r}
 knn_spec <- nearest_neighbor() %>%
   set_mode("classification")
+
+?nearest_neighbor
 ```
 
 5.  A K-Nearest-Neighbors process needs to use a pre-chosen number of nearest neighbors to make predictions. How many neighbors does the specification use by default?
@@ -121,6 +127,8 @@ knn_spec <- nearest_neighbor() %>%
 ```{r}
 knn_spec <- nearest_neighbor(neighbors = 10) %>%
   set_mode("classification")
+
+knn_spec
 ```
 
 ::: callout-warning
@@ -190,6 +198,8 @@ So instead of making a permanent change, we add it to our recipe:
 ```{r}
 rec_2 <- rec_1 %>%
   step_log(chol)
+
+rec_2
 ```
 
 ### Omitting variables
@@ -199,6 +209,8 @@ Now, we probably want to use more variables than only `age` and `chol` to predic
 ```{r}
 rec_3 <- recipe(diagnosis ~ ., 
                 data = ha_1)
+
+rec_3
 ```
 
 ```{r}
@@ -225,7 +237,7 @@ For example, the variable `cp` is recorded as numbers 1 to 4, but from the data 
 
 > cp: chest pain type -- Value 1: typical angina -- Value 2: atypical angina -- Value 3: non-anginal pain -- Value 4: asymptomatic
 
-In our data cleaning step, we used \`factor1 to make this variable categorical.
+In our data cleaning step, we used `factor` to make this variable categorical.
 
 Unfortunately, not all modeling specifications know how to deal with categorical variables! Instead, we need to *dummify* the variable, to make it appear as numeric:
 
@@ -282,7 +294,7 @@ rec_3 <- rec_3  %>%
 
 ```{r}
 rec_4 <- rec_3 %>%
-  step_normalize(trtbps)
+  step_normalize(all_numeric_predictors())
 ```
 
 *(Hint: If you are feeling lost, use `step_rm()` to omit any one of the predictors.)*
